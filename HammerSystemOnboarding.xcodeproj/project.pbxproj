@@ -10,7 +10,6 @@
 		17402EDE29DB335C0094A899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EDD29DB335C0094A899 /* AppDelegate.swift */; };
 		17402EE029DB335C0094A899 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EDF29DB335C0094A899 /* SceneDelegate.swift */; };
 		17402EE229DB335C0094A899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EE129DB335C0094A899 /* ViewController.swift */; };
-		17402EE529DB335C0094A899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17402EE329DB335C0094A899 /* Main.storyboard */; };
 		17402EE829DB335C0094A899 /* HammerSystemOnboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17402EE629DB335C0094A899 /* HammerSystemOnboarding.xcdatamodeld */; };
 		17402EEA29DB33630094A899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17402EE929DB33630094A899 /* Assets.xcassets */; };
 		17402EED29DB33630094A899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17402EEB29DB33630094A899 /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 		17402EDD29DB335C0094A899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17402EDF29DB335C0094A899 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		17402EE129DB335C0094A899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		17402EE429DB335C0094A899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17402EE729DB335C0094A899 /* HammerSystemOnboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HammerSystemOnboarding.xcdatamodel; sourceTree = "<group>"; };
 		17402EE929DB33630094A899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17402EEC29DB33630094A899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 				17402EDD29DB335C0094A899 /* AppDelegate.swift */,
 				17402EDF29DB335C0094A899 /* SceneDelegate.swift */,
 				17402EE129DB335C0094A899 /* ViewController.swift */,
-				17402EE329DB335C0094A899 /* Main.storyboard */,
 				17402EE929DB33630094A899 /* Assets.xcassets */,
 				17402EEB29DB33630094A899 /* LaunchScreen.storyboard */,
 				17402EEE29DB33630094A899 /* Info.plist */,
@@ -130,7 +127,6 @@
 			files = (
 				17402EED29DB33630094A899 /* LaunchScreen.storyboard in Resources */,
 				17402EEA29DB33630094A899 /* Assets.xcassets in Resources */,
-				17402EE529DB335C0094A899 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		17402EE329DB335C0094A899 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17402EE429DB335C0094A899 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		17402EEB29DB33630094A899 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +284,6 @@
 				INFOPLIST_FILE = HammerSystemOnboarding/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,7 +311,6 @@
 				INFOPLIST_FILE = HammerSystemOnboarding/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
