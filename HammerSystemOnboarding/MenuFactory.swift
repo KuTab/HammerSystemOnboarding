@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import CoreData
 
 class MenuFactory {
     public func build() -> MenuViewController {
         let presenter = MenuPresenter()
-        let interactor = MenuInteractor(presenter: presenter)
+        let fetchWorker = FetchMenuWorker()
+        let coreDataWorker = CoreDataWorker()
+        let interactor = MenuInteractor(presenter: presenter, fetchWorker: fetchWorker, coreDataWorker: coreDataWorker)
         let viewController = MenuViewController(interactor: interactor)
         presenter.viewController = viewController
         return viewController

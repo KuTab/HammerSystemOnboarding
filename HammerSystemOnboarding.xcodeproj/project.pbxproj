@@ -9,16 +9,18 @@
 /* Begin PBXBuildFile section */
 		17402EDE29DB335C0094A899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EDD29DB335C0094A899 /* AppDelegate.swift */; };
 		17402EE029DB335C0094A899 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EDF29DB335C0094A899 /* SceneDelegate.swift */; };
-		17402EE829DB335C0094A899 /* HammerSystemOnboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17402EE629DB335C0094A899 /* HammerSystemOnboarding.xcdatamodeld */; };
 		17402EEA29DB33630094A899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17402EE929DB33630094A899 /* Assets.xcassets */; };
 		17402EED29DB33630094A899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17402EEB29DB33630094A899 /* LaunchScreen.storyboard */; };
 		17402EF529DCB2740094A899 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EF429DCB2740094A899 /* MenuViewController.swift */; };
 		17402EF729DCB28F0094A899 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EF629DCB28F0094A899 /* MenuView.swift */; };
 		17402EF929DCB29E0094A899 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EF829DCB29E0094A899 /* MenuInteractor.swift */; };
 		17402EFB29DCB2AD0094A899 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EFA29DCB2AD0094A899 /* MenuPresenter.swift */; };
-		17402EFD29DCB2BB0094A899 /* MenuWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EFC29DCB2BB0094A899 /* MenuWorker.swift */; };
 		17402EFF29DCB2C60094A899 /* MenuFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402EFE29DCB2C60094A899 /* MenuFactory.swift */; };
 		17402F0129DCFE740094A899 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402F0029DCFE740094A899 /* FoodCell.swift */; };
+		17402F0329DD76F40094A899 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402F0229DD76F40094A899 /* FoodModel.swift */; };
+		17402F0529DD80F10094A899 /* FetchMenuWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402F0429DD80F10094A899 /* FetchMenuWorker.swift */; };
+		17402F0929DDC3BB0094A899 /* MenuDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402F0829DDC3BB0094A899 /* MenuDataFlow.swift */; };
+		17402F0B29DE01CF0094A899 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17402F0A29DE01CF0094A899 /* CoreDataWorker.swift */; };
 		6383E53E2A5A797C6FDA4BBF /* Pods_HammerSystemOnboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF89D402271D6B7BA914DDE4 /* Pods_HammerSystemOnboarding.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +29,6 @@
 		17402EDA29DB335C0094A899 /* HammerSystemOnboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HammerSystemOnboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17402EDD29DB335C0094A899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17402EDF29DB335C0094A899 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		17402EE729DB335C0094A899 /* HammerSystemOnboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HammerSystemOnboarding.xcdatamodel; sourceTree = "<group>"; };
 		17402EE929DB33630094A899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17402EEC29DB33630094A899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17402EEE29DB33630094A899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,9 +36,12 @@
 		17402EF629DCB28F0094A899 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		17402EF829DCB29E0094A899 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
 		17402EFA29DCB2AD0094A899 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
-		17402EFC29DCB2BB0094A899 /* MenuWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuWorker.swift; sourceTree = "<group>"; };
 		17402EFE29DCB2C60094A899 /* MenuFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFactory.swift; sourceTree = "<group>"; };
 		17402F0029DCFE740094A899 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		17402F0229DD76F40094A899 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
+		17402F0429DD80F10094A899 /* FetchMenuWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMenuWorker.swift; sourceTree = "<group>"; };
+		17402F0829DDC3BB0094A899 /* MenuDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDataFlow.swift; sourceTree = "<group>"; };
+		17402F0A29DE01CF0094A899 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
 		A63113FE56745134B4DA27A4 /* Pods-HammerSystemOnboarding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HammerSystemOnboarding.release.xcconfig"; path = "Target Support Files/Pods-HammerSystemOnboarding/Pods-HammerSystemOnboarding.release.xcconfig"; sourceTree = "<group>"; };
 		AF89D402271D6B7BA914DDE4 /* Pods_HammerSystemOnboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HammerSystemOnboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,14 +84,16 @@
 				17402EE929DB33630094A899 /* Assets.xcassets */,
 				17402EEB29DB33630094A899 /* LaunchScreen.storyboard */,
 				17402EEE29DB33630094A899 /* Info.plist */,
-				17402EE629DB335C0094A899 /* HammerSystemOnboarding.xcdatamodeld */,
 				17402EF429DCB2740094A899 /* MenuViewController.swift */,
 				17402EF629DCB28F0094A899 /* MenuView.swift */,
 				17402EF829DCB29E0094A899 /* MenuInteractor.swift */,
 				17402EFA29DCB2AD0094A899 /* MenuPresenter.swift */,
-				17402EFC29DCB2BB0094A899 /* MenuWorker.swift */,
 				17402EFE29DCB2C60094A899 /* MenuFactory.swift */,
 				17402F0029DCFE740094A899 /* FoodCell.swift */,
+				17402F0229DD76F40094A899 /* FoodModel.swift */,
+				17402F0429DD80F10094A899 /* FetchMenuWorker.swift */,
+				17402F0829DDC3BB0094A899 /* MenuDataFlow.swift */,
+				17402F0A29DE01CF0094A899 /* CoreDataWorker.swift */,
 			);
 			path = HammerSystemOnboarding;
 			sourceTree = "<group>";
@@ -223,16 +229,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17402F0929DDC3BB0094A899 /* MenuDataFlow.swift in Sources */,
 				17402EF929DCB29E0094A899 /* MenuInteractor.swift in Sources */,
 				17402EFF29DCB2C60094A899 /* MenuFactory.swift in Sources */,
+				17402F0329DD76F40094A899 /* FoodModel.swift in Sources */,
 				17402EF729DCB28F0094A899 /* MenuView.swift in Sources */,
 				17402EFB29DCB2AD0094A899 /* MenuPresenter.swift in Sources */,
 				17402EF529DCB2740094A899 /* MenuViewController.swift in Sources */,
-				17402EFD29DCB2BB0094A899 /* MenuWorker.swift in Sources */,
-				17402EE829DB335C0094A899 /* HammerSystemOnboarding.xcdatamodeld in Sources */,
 				17402F0129DCFE740094A899 /* FoodCell.swift in Sources */,
+				17402F0B29DE01CF0094A899 /* CoreDataWorker.swift in Sources */,
 				17402EDE29DB335C0094A899 /* AppDelegate.swift in Sources */,
 				17402EE029DB335C0094A899 /* SceneDelegate.swift in Sources */,
+				17402F0529DD80F10094A899 /* FetchMenuWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,19 +450,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		17402EE629DB335C0094A899 /* HammerSystemOnboarding.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				17402EE729DB335C0094A899 /* HammerSystemOnboarding.xcdatamodel */,
-			);
-			currentVersion = 17402EE729DB335C0094A899 /* HammerSystemOnboarding.xcdatamodel */;
-			path = HammerSystemOnboarding.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 17402ED229DB335C0094A899 /* Project object */;
 }

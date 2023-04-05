@@ -9,16 +9,19 @@ import UIKit
 import SnapKit
 
 protocol MenuDisplayLogic: AnyObject {
-    
+    func displayFood(_ viewModel: MenuDataFlow.ViewModel)
 }
 
-class MenuViewController: UIViewController, MenuDisplayLogic {
+class MenuViewController: UIViewController {
     private var interactor: MenuBusinessLogic
-    private let images = [UIImage(named: "Banner"), UIImage(named: "Banner")]
+    private let images = [UIImage(named: "BK"), UIImage(named: "BK")]
     private let bannerViewHeight: CGFloat = 112
+    private var pizza: [PresentedFood]
+    private var deserts: [PresentedFood]
+    private var options: [String] =  ["Pizza", "Deserts"]
     
     lazy var townLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Moscow"
         return label
     }()
@@ -55,17 +58,19 @@ class MenuViewController: UIViewController, MenuDisplayLogic {
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-
+    
     init(interactor: MenuBusinessLogic) {
         self.interactor = interactor
+        self.pizza = []
+        self.deserts = []
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = .white
         bannerCollectionView.delegate = self
         bannerCollectionView.dataSource = self
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
-        menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
+        menuCollectionView.delegate = self
         addSubviews()
         makeConstraints()
     }
@@ -76,7 +81,7 @@ class MenuViewController: UIViewController, MenuDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        interactor.fetchFood(.init())
     }
     
     private func addSubviews() {
@@ -115,9 +120,26 @@ class MenuViewController: UIViewController, MenuDisplayLogic {
     }
 }
 
+extension MenuViewController: MenuDisplayLogic {
+    func displayFood(_ viewModel: MenuDataFlow.ViewModel) {
+        self.pizza = viewModel.presentedPizza
+        self.deserts = viewModel.presenteDeserts
+        menuCollectionView.reloadData()
+    }
+}
+
 extension MenuViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if collectionView == categoryCollectionView {
+            switch indexPath.row {
+            case 0:
+                menuCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            case 1:
+                menuCollectionView.scrollToItem(at: IndexPath(row: 0, section: 1), at:  .top, animated: true)
+            default:
+                return
+            }
+        }
     }
 }
 
@@ -125,30 +147,50 @@ extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == bannerCollectionView {
             return images.count
+        } else if collectionView == categoryCollectionView {
+            return options.count
+        } else if collectionView == menuCollectionView {
+            return section == 0 ? pizza.count : deserts.count
         }
-        return 5
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == bannerCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath)
-            cell.backgroundColor = .red
+            let image = UIImageView(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: cell.bounds.size.height))
+            image.image = images[indexPath.row]
+            cell.contentView.addSubview(image)
             cell.layer.cornerRadius = 5
             return cell
         } else if collectionView == categoryCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath)
-            cell.backgroundColor = .red
+            cell.backgroundColor = .lightGray
+            let title = UILabel(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: 16))
+            title.textAlignment = .center
+            title.textColor = .white
+            title.text = options[indexPath.row]
+            title.center = cell.contentView.center
+            cell.contentView.addSubview(title)
             cell.layer.cornerRadius = 16
             return cell
         } else if collectionView == menuCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoodCell", for: indexPath) as! FoodCell
-            cell.titleLabel.text = "Title"
-            cell.descriptionLabel.text = "Description"
-            cell.priceLabel.text = "100"
-            cell.image.image = UIImage(named: "Banner")
+            let menuItem = indexPath.section == 0 ? pizza[indexPath.row] : deserts[indexPath.row]
+            cell.titleLabel.text = menuItem.name
+            cell.descriptionLabel.text = menuItem.description
+            cell.priceLabel.text = "от \(menuItem.price) р"
+            cell.loadImage(for: menuItem.image)
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if collectionView == menuCollectionView {
+            return 2
+        }
+        return 1
     }
 }
 
