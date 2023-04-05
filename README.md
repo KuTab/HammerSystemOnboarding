@@ -9,7 +9,7 @@
 4. Планка с категориями при скролле прилипает к верхнему бару\
 5. При нажатии на категорию, список пролистывается к
 соответствующему разделу\
-6.В качестве API использовалось Pizza and Deserts https://rapidapi.com/kaushiksheel9/api/pizza-and-desserts \
+6.В качестве API использовалось Pizza and Deserts https://rapidapi.com/kaushiksheel9/api/pizza-and-desserts\
 7. Offline-режим работает через UserDefaults\
 
 Архитектура Clean Swift\
