@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol MenuDisplayLogic: AnyObject {
     
@@ -14,6 +15,7 @@ protocol MenuDisplayLogic: AnyObject {
 class MenuViewController: UIViewController, MenuDisplayLogic {
     private var interactor: MenuBusinessLogic
     private let images = [UIImage(named: "Banner"), UIImage(named: "Banner")]
+    private let bannerViewHeight: CGFloat = 112
     
     lazy var townLabel: UILabel = {
        let label = UILabel()
@@ -94,7 +96,7 @@ class MenuViewController: UIViewController, MenuDisplayLogic {
             make.top.equalTo(townLabel.snp.bottom).offset(24)
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing)
-            make.height.equalTo(112)
+            make.height.equalTo(bannerViewHeight)
         }
         
         categoryCollectionView.snp.makeConstraints { make in
@@ -147,5 +149,18 @@ extension MenuViewController: UICollectionViewDataSource {
             return cell
         }
         return UICollectionViewCell()
+    }
+}
+
+extension MenuViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if menuCollectionView.contentOffset.y > 0 {
+            bannerCollectionView.snp.updateConstraints { make in
+                make.height.equalTo(bannerViewHeight - menuCollectionView.contentOffset.y)
+                UIView.animate(withDuration: 0.2) {
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
     }
 }
