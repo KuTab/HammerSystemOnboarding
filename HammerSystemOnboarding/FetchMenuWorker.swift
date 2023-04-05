@@ -16,7 +16,7 @@ class FetchMenuWorker: FetchesMenuLogic {
         var pizza: [Food] = []
         var deserts: [Food] = []
         let headers = [
-            "X-RapidAPI-Key": "c836cd3bfdmshc3736e8ade00b2dp189a99jsn2283dff84ba3",
+            "X-RapidAPI-Key": "cffddfd05cmsh00fc6aa6dff5d18p1b6bccjsn4287e61fc891",
             "X-RapidAPI-Host": "pizza-and-desserts.p.rapidapi.com"
         ]
         let urls = [URL(string: "https://pizza-and-desserts.p.rapidapi.com/pizzas"), URL(string: "https://pizza-and-desserts.p.rapidapi.com/desserts")]

@@ -26,7 +26,7 @@ class FoodCell: UICollectionViewCell {
     
     private func addSubviews() {
         addSubview(image)
-        titleLabel.numberOfLines = 0
+        descriptionLabel.numberOfLines = 0
         addSubview(titleLabel)
         addSubview(descriptionLabel)
         addSubview(priceLabel)
@@ -50,16 +50,18 @@ class FoodCell: UICollectionViewCell {
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.leading.equalTo(image.snp.trailing).offset(32)
-            make.trailing.equalTo(self.snp.trailing).offset(-24)
+            make.trailing.equalTo(self.snp.trailing)
         }
         
         priceLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(24)
             make.leading.equalTo(image.snp.trailing).offset(116)
+            
         }
         
         contentView.snp.makeConstraints { make in
             make.width.equalTo(156)
+            make.bottom.equalTo(priceLabel.snp.bottom).offset(16)
         }
     }
     

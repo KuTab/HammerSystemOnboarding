@@ -50,7 +50,7 @@ class MenuViewController: UIViewController {
     
     var menuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 375, height: 156)
+        layout.itemSize = CGSize(width: 375, height: 200)
         layout.sectionInset.right = 8
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
